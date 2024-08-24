@@ -10,7 +10,7 @@
     [contact]="activeContact$ | async"
 ></app-contact-detail> -->
 
-
+<div *ngIf="loadingContacts">Loading contacts.....</div>
 <div *ngFor="let contact of contactList$ | async" class="contact-list-item">
     <h3>{{ contact.firstName }} {{ contact.lastName }}</h3>
     <div class="contact-actions">

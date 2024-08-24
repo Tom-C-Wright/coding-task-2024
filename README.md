@@ -5,16 +5,16 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 # Introduction
 This repo contains a simple angular / ngrx project. The project consists of:
 * Components - 
-    The main structural elements of the app, this includes "Smart" components that interact with the store, and "Dumb" componenets that are only aware of their inputs and outputs.
+    The main structural elements of the app, this includes "Smart" components that interact with the store, and "Dumb" components that are only aware of their inputs and outputs.
 * Dialogs - 
-    Special componenets that make use of the Mat Dialog CDK, these are used for "User Input" effects.
+    Special components that make use of the Mat Dialog CDK, these are used for "User Input" effects.
 * Models - 
     Define the shape of the data the app uses. (In our main codebase, this is where we would define out Zod schemas, for simplicity here we have just provided a simple type)
 * Services - 
     The services are where we orchestrate interacting with the back end to perform CRUD operations, in this example we have provided some mock data and functions.
     This is also where we provide functions that launch the dialogs.
 * State -
-    The state folder contains the NGRX componenets for managing state.
+    The state folder contains the NGRX components for managing state.
 
 In our main code base, you would expect to find this architecture replicated within each feature module that makes up the app. For simplicity here, we have included everything inside the app module.
 
@@ -27,6 +27,11 @@ In our main code base, you would expect to find this architecture replicated wit
 # Answers
 
 1. //Optionally provide any notes relating to question 1 here.
+
+For the UI, I created a public `loadingContacts` property on the `ContactListComponent` and used the `NgIf` structural directive to remove the loading message from the DOM once the contacts are returned from the Contact service. 
+
+To toggle the loading message I created a `onContactsLoaded()` method inside `ContactListComponent` and used a subscriber on `contactList$` to call this method when it is delivered a non-empty array of contacts.
+
 2. //Optionally provide any notes relating to question 2 here.
 3. //Provide your answer to question 3 here.
 4. //Provide your link or location of your file within the repo here.
