@@ -33,5 +33,9 @@ For the UI, I created a public `loadingContacts` property on the `ContactListCom
 To toggle the loading message I created a `onContactsLoaded()` method inside `ContactListComponent` and used a subscriber on `contactList$` to call this method when it is delivered a non-empty array of contacts.
 
 2. //Optionally provide any notes relating to question 2 here.
+
+Reused the `ContactEditDialogue` fairly easily, needed to fix a bug where upon creating a new contact the `ContactService` returned the original contact object instead of the updated contact object with an updated ID. 
+Added a unit test to catch the case.
+
 3. //Provide your answer to question 3 here.
 4. //Provide your link or location of your file within the repo here.

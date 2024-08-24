@@ -49,14 +49,10 @@ export class ContactService {
   
     if (index === -1) {
       // If the contact doesn't exist, add it
-      this.mockList = [...this.mockList, { ...contact, id: this.getNextId() }];
-    } else {
-      // If the contact exists, replace it with a new object
-      this.mockList = [
-        ...this.mockList.slice(0, index),
-        contact,
-        ...this.mockList.slice(index + 1)
-      ];
+      const newContact =  { ...contact, id: this.getNextId() };
+      this.mockList = [...this.mockList, newContact];
+      // Return updated contact otherwise components will not be given an updated ID value.
+      return of(newContact);
     }
   
     return of(contact);

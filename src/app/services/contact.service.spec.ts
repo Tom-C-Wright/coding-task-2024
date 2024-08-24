@@ -19,4 +19,16 @@ describe('ContactService', () => {
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
+
+  it('should return an updated contact when saving a new entry', ()=>{
+    service.saveContact$({
+      id: -1, // Signifies new contact,
+      firstName: "",
+      lastName: "",
+      email: "",
+      phoneNumber: "",
+    }).forEach((value)=> {
+      expect(value.id).not.toBe(-1)
+    });
+  });
 });

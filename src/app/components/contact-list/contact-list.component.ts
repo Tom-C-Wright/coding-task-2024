@@ -45,6 +45,21 @@ export class ContactListComponent {
     this.loadingContacts = false;
   }
 
+  /**
+   * Open the edit contact dialogue and create a new contact via the contact service.
+   */
+  addContact() {
+    const newContact: Contact = {
+      id: -1, // Set ID to -1 so that the contact service treats it as a new contact
+      firstName: "",
+      lastName: "",
+      email: "",
+      phoneNumber: ""
+    };
+
+    this.store.dispatch(actions.editContactClicked({ contact: newContact }));
+  }
+
   viewContactClicked(contactId: number) {
     this.store.dispatch(actions.contactSelected({ contactId }));
   }
