@@ -38,4 +38,20 @@ Reused the `ContactEditDialogue` fairly easily, needed to fix a bug where upon c
 Added a unit test to catch the case.
 
 3. //Provide your answer to question 3 here.
+
+https://rxjs.dev/api/operators/catchError
+
+The `catchError` operator seems appropriate. I would update the `ContactService` to return a response object that contains the requested data and optionally an error object that perhaps has an error code that the components use to evaluate how to respond to the error, and a human friendly message for either debugging or to show to a user. 
+
+Something along these lines:
+```ts
+interface ServiceResponse<T> {
+  error?: {
+    message: string;
+    code: AppErrorCode;
+  },
+  results: T,
+}
+```
+
 4. //Provide your link or location of your file within the repo here.
