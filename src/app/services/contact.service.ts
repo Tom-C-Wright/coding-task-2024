@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, delay, of } from 'rxjs';
+import { Observable, delay, observeOn, of } from 'rxjs';
 import { Contact } from '../models/contact.model';
 import { MatDialog } from '@angular/material/dialog';
 import { ContactEditDialogComponent } from '../dialogs/contact-edit-dialog/contact-edit-dialog.component';

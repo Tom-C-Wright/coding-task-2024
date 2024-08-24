@@ -1,12 +1,15 @@
 import { Component, Inject } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import {
+   MAT_DIALOG_DATA,
+   MatDialogRef
+} from '@angular/material/dialog';
 import { Contact } from 'src/app/models/contact.model';
 
 @Component({
   selector: 'app-contact-edit-dialog',
   templateUrl: './contact-edit-dialog.component.html',
-  styleUrls: ['./contact-edit-dialog.component.css']
+  styleUrls: ['./contact-edit-dialog.component.css'],
 })
 
 export class ContactEditDialogComponent {

@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ContactDetailComponent } from './contact-detail.component';
+import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 describe('ContactDetailComponent', () => {
   let component: ContactDetailComponent;
@@ -8,7 +9,11 @@ describe('ContactDetailComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ContactDetailComponent ]
+      declarations: [ ContactDetailComponent ],
+      providers: [
+        { provide: MatDialog, useValue: {} },
+        { provide: MAT_DIALOG_DATA, useValue: {} }
+      ]
     })
     .compileComponents();
 

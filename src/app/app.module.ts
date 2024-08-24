@@ -12,8 +12,8 @@ import { reducer } from './state/reducer';
 import { ContactEffects } from './state/effects';
 import { EffectsModule } from '@ngrx/effects';
 
-import { MatDialogModule } from '@angular/material/dialog';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -25,7 +25,7 @@ import { ReactiveFormsModule } from '@angular/forms';
   ],
   imports: [
     BrowserModule,
-    StoreModule.forRoot({contacts : reducer}),
+    StoreModule.forRoot({ contacts: reducer }),
     EffectsModule.forRoot(ContactEffects),
     MatDialogModule,
     ReactiveFormsModule
